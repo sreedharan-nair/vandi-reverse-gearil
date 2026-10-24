@@ -3,3 +3,7 @@ title = "വണ്ടി റിവേഴ്‌സ് ഗിയറിൽ"
 authors = ["വി എൻ ശ്രീധരൻ നായർ"]
 language = "ml"
 text-direction = "ltr" 
+
+[output.html]
+additional-css = ["src/custom.css"]
+additional-js = ["src/book-extras.js"]

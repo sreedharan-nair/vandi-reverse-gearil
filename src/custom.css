@@ -1,0 +1,640 @@
+/* ==========================================================================
+   വണ്ടി റിവേഴ്‌സ് ഗിയറിൽ — book styling for mdBook 0.5
+   --------------------------------------------------------------------------
+   1. Fonts          4. Chapter headings & ornaments   7. Title page
+   2. Colour themes  5. Reading page (text, margins)   8. Responsive / print
+   3. Menu & sidebar 6. Quotes, lists, misc
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. FONTS  (self-hosted: works offline, no Google Fonts needed)
+   Files live in src/fonts-ml/. The path is relative to the generated CSS,
+   which mdBook places in book/src/, so "../fonts-ml/" points to book/fonts-ml/.
+   ========================================================================== */
+/* English letters, digits and punctuation (including quote marks) use Source Sans 3,
+   which pairs better with Malayalam than Gayathri's own thin Latin letters.
+   size-adjust makes it match the visual size of the Malayalam text. */
+@font-face {
+    font-family: "Latin Web";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    size-adjust: 106%;
+    src: url("../fonts-ml/source-sans-3-latin-400-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Latin Web";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    size-adjust: 106%;
+    src: url("../fonts-ml/source-sans-3-latin-700-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Gayathri Web";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts-ml/gayathri-malayalam-400-normal.woff2") format("woff2");
+    unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832;
+}
+@font-face {
+    font-family: "Gayathri Web";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts-ml/gayathri-latin-400-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Gayathri Web";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts-ml/gayathri-malayalam-700-normal.woff2") format("woff2");
+    unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832;
+}
+@font-face {
+    font-family: "Gayathri Web";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts-ml/gayathri-latin-700-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Noto Serif Malayalam stays as a fallback for any glyph Gayathri lacks */
+@font-face {
+    font-family: "Noto Serif Malayalam Web";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../fonts-ml/noto-serif-malayalam-malayalam-wght-normal.woff2") format("woff2");
+    unicode-range: U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2,
+                   U+200C-200D, U+20B9, U+25CC, U+A830-A832;
+}
+@font-face {
+    font-family: "Noto Serif Malayalam Web";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../fonts-ml/noto-serif-malayalam-latin-wght-normal.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+                   U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+                   U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Noto Serif Malayalam Web";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("../fonts-ml/noto-serif-malayalam-latin-ext-wght-normal.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+                   U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+                   U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+    --book-font: "Latin Web", "Gayathri Web", "Gayathri", "Noto Serif Malayalam Web", "Meera", "Rachana",
+                 "Malayalam Sangam MN", sans-serif;
+
+    /* Layout knobs — change these to taste */
+    --sidebar-target-width: 215px;  /* width of the chapter list (mdBook default is 300px) */
+    --content-max-width: 700px;    /* width of the reading page */
+    --book-font-size: 1.7rem;       /* 1rem = 10px in mdBook, so this is 17px */
+    --book-line-height: 1.9;       /* Malayalam needs generous line spacing */
+}
+
+
+/* ==========================================================================
+   2. COLOUR THEMES
+   --bg = the "desk" behind the page, --paper = the page itself,
+   --accent = titles & ornaments. (Original mdBook theme names: Light, Rust,
+   Coal, Navy, Ayu. "Rust" is the warm sepia one; Coal, Navy and Ayu are dark.)
+   ========================================================================== */
+
+/* Light — warm paper & ink */
+html.light {
+    --bg: #ece4d3;
+    --paper: #fbf8f1;
+    --fg: #2b2623;
+    --accent: #7a2630;
+    --links: #7a2630;
+    --rule: #d8ceb9;
+    --shadow: rgba(60, 40, 20, 0.14);
+
+    --sidebar-bg: #f4eee1;
+    --sidebar-fg: #3a332e;
+    --sidebar-non-existant: #a89f90;
+    --sidebar-active: #7a2630;
+    --sidebar-spacer: #ddd3bf;
+    --scrollbar: #b9ad97;
+    --icons: #8a7f6e;
+    --icons-hover: #7a2630;
+    --quote-bg: #f3ecdc;
+    --quote-border: #d8ceb9;
+    --theme-popup-bg: #fbf8f1;
+    --theme-popup-border: #d8ceb9;
+    --theme-hover: #efe7d5;
+}
+
+/* Rust — aged ivory (sepia) */
+html.rust {
+    --bg: #e3d6ad;
+    --paper: #f4ecd0;
+    --fg: #3d3123;
+    --accent: #704214;
+    --links: #704214;
+    --rule: #cfbf8f;
+    --shadow: rgba(70, 45, 10, 0.18);
+
+    --sidebar-bg: #eadfb8;
+    --sidebar-fg: #3d3123;
+    --sidebar-active: #704214;
+    --sidebar-spacer: #d2c499;
+    --icons: #8b7650;
+    --icons-hover: #704214;
+    --quote-bg: #eee3bd;
+    --quote-border: #d2c499;
+    --theme-popup-bg: #f4ecd0;
+    --theme-popup-border: #cfbf8f;
+    --theme-hover: #ebdfb6;
+}
+
+/* Coal — warm candlelight (soft cream text on warm charcoal, copper accent) */
+html.coal {
+    --bg: #17130f;
+    --paper: #231d18;
+    --fg: #d9cebc;
+    --accent: #dba264;
+    --links: #dba264;
+    --rule: #3d332a;
+    --shadow: rgba(0, 0, 0, 0.45);
+
+    --sidebar-bg: #1c1713;
+    --sidebar-fg: #bfb3a0;
+    --sidebar-active: #dba264;
+    --sidebar-spacer: #302821;
+    --icons: #8f8472;
+    --icons-hover: #dba264;
+    --quote-bg: #2b241d;
+    --quote-border: #3d332a;
+    --theme-popup-bg: #231d18;
+    --theme-popup-border: #3d332a;
+    --theme-hover: #2b241d;
+}
+
+/* Navy — soft midnight ink (muted blue-grey, periwinkle accent) */
+html.navy {
+    --bg: #111827;
+    --paper: #1a2336;
+    --fg: #d3dae8;
+    --accent: #93b4e6;
+    --links: #93b4e6;
+    --rule: #2c3957;
+    --shadow: rgba(0, 0, 0, 0.45);
+
+    --sidebar-bg: #151d2f;
+    --sidebar-fg: #aeb9d0;
+    --sidebar-active: #93b4e6;
+    --sidebar-spacer: #243049;
+    --icons: #7885a3;
+    --icons-hover: #93b4e6;
+    --quote-bg: #212c45;
+    --quote-border: #2c3957;
+    --theme-popup-bg: #1a2336;
+    --theme-popup-border: #2c3957;
+    --theme-hover: #212c45;
+}
+
+/* Ayu — deep forest green, sage accent */
+html.ayu {
+    --bg: #131b18;
+    --paper: #1b2621;
+    --fg: #d1dccf;
+    --accent: #a8c98a;
+    --links: #a8c98a;
+    --rule: #2f4038;
+    --shadow: rgba(0, 0, 0, 0.45);
+
+    --sidebar-bg: #16201c;
+    --sidebar-fg: #aebdaa;
+    --sidebar-active: #a8c98a;
+    --sidebar-spacer: #26342d;
+    --icons: #7c8f7b;
+    --icons-hover: #a8c98a;
+    --quote-bg: #22302a;
+    --quote-border: #2f4038;
+    --theme-popup-bg: #1b2621;
+    --theme-popup-border: #2f4038;
+    --theme-hover: #22302a;
+}
+
+/* Fallbacks so mdBook's own Ayu theme (and anything unlisted) still works */
+:root {
+    --paper: var(--bg);
+    --accent: var(--links);
+    --rule: var(--quote-border);
+    --shadow: rgba(0, 0, 0, 0.25);
+}
+
+::selection {
+    background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+
+/* ==========================================================================
+   3. MENU BAR & SIDEBAR
+   ========================================================================== */
+body,
+.sidebar,
+.menu-title,
+.nav-chapters,
+.mobile-nav-chapters,
+.theme-popup,
+#mdbook-searchbar,
+.searchresults-outer {
+    font-family: var(--book-font);
+}
+
+.menu-bar {
+    background-color: var(--bg);
+}
+.menu-bar,
+.menu-bar:visited,
+.nav-chapters,
+.nav-chapters:visited,
+.mobile-nav-chapters,
+.mobile-nav-chapters:visited,
+.menu-bar .icon-button,
+.menu-bar a i {
+    color: var(--icons);
+}
+.menu-bar .icon-button:hover,
+.nav-chapters:hover,
+.menu-bar a:hover i {
+    color: var(--icons-hover);
+}
+
+.menu-title {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--accent);
+    opacity: 0.95;
+}
+
+/* Table of contents */
+.sidebar {
+    font-size: 1.5rem;
+    border-right: 1px solid var(--sidebar-spacer);
+}
+.chapter li.chapter-item {
+    line-height: 1.55;
+    margin-block-start: 0.5rem;
+}
+.chapter li a {
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+}
+.chapter li a:hover {
+    text-decoration: none;
+    background: var(--theme-hover);
+}
+.sidebar a.active,
+.chapter li a.active {
+    color: var(--sidebar-active);
+    font-weight: 700;
+    background: var(--theme-hover);
+    box-shadow: inset 3px 0 0 var(--sidebar-active);
+}
+.sidebar .part-title {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+
+/* ==========================================================================
+   4. CHAPTER HEADINGS & ORNAMENTS
+   ========================================================================== */
+.content main h1 {
+    font-family: var(--book-font);
+    text-align: center;
+    font-weight: 700;
+    font-size: calc(3rem * var(--book-scale, 1));
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: var(--accent);
+    margin: 3rem 0 3.2rem;
+    border: none;
+}
+/* mdBook wraps headings in a link; keep it the heading colour, not link-blue */
+.content main h1 .header:link,
+.content main h1 .header:visited {
+    color: inherit;
+}
+/* a small fading rule under every chapter title */
+.content main h1::after {
+    content: "";
+    display: block;
+    width: 9rem;
+    height: 1px;
+    margin: 1.8rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.8;
+}
+
+.content main h2,
+.content main h3 {
+    font-family: var(--book-font);
+    color: var(--accent);
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 3rem 0 1rem;
+}
+.content main h2 { font-size: calc(2.4rem * var(--book-scale, 1)); }
+.content main h3 { font-size: calc(2.0rem * var(--book-scale, 1)); }
+.content main h2 .header:link, .content main h2 .header:visited,
+.content main h3 .header:link, .content main h3 .header:visited {
+    color: inherit;
+}
+
+/* "---" in Markdown becomes a three-dot scene break (drawn in CSS, no font needed) */
+.content main hr {
+    border: 0;
+    width: 6rem;
+    height: 0.8rem;
+    margin: 3.2rem auto;
+    background: radial-gradient(circle at center, var(--accent) 0 0.24rem, transparent 0.3rem)
+                0 0 / 2rem 100% repeat-x;
+    opacity: 0.85;
+}
+
+
+/* ==========================================================================
+   5. THE READING PAGE
+   On wide screens the text sits on a "paper" page lying on a darker desk.
+   ========================================================================== */
+.content main {
+    font-family: var(--book-font);
+    font-size: calc(var(--book-font-size) * var(--book-scale, 1));
+    line-height: var(--book-line-height);
+    color: var(--fg);
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    hyphens: none;                 /* no Malayalam hyphenation dictionary exists */
+}
+
+.content main p {
+    font-family: var(--book-font);
+    line-height: var(--book-line-height);
+    letter-spacing: 0;             /* never add letter-spacing to Malayalam: it can break conjuncts */
+    text-align: left;              /* Malayalam words are long: justified text opens big gaps.
+                                      Change to "justify" if you prefer the printed look. */
+    margin: 0 0 0.45em;
+    text-indent: 0;
+}
+/* Printed-book convention: indent every paragraph except the first after a heading */
+.content main p + p {
+    text-indent: 1.8em;
+}
+
+/* Malayalam has no true italic: browsers fake a slant that looks poor,
+   so emphasis uses weight/colour instead. */
+.content main em,
+.content main i {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+}
+.content main strong {
+    font-weight: 700;
+}
+
+/* Wide screens: page-on-desk look */
+@media only screen and (min-width: 900px) {
+    .content main {
+        background: var(--paper);
+        margin-block: 2.4rem 4rem;
+        padding: 3.2rem 5rem 4rem;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px var(--shadow), 0 10px 34px var(--shadow);
+        border: 1px solid var(--rule);
+    }
+}
+
+
+/* ==========================================================================
+   6. QUOTES, LISTS & MISC
+   ========================================================================== */
+.content main blockquote {
+    margin: 2rem 0;
+    padding: 0.4rem 2rem;
+    background: var(--quote-bg);
+    border-inline-start: 4px solid var(--accent);
+    border-block: 0;
+    border-radius: 0 4px 4px 0;
+}
+.content main blockquote p {
+    text-indent: 0;
+}
+
+.content main ul,
+.content main ol {
+    line-height: var(--book-line-height);
+    padding-inline-start: 2.4rem;
+}
+.content main li { margin: 0.3rem 0; }
+
+.content main a:link,
+.content main a:visited {
+    color: var(--links);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+}
+
+.content main table { font-size: 0.9em; }
+.content main img {
+    display: block;
+    margin: 2.4rem auto;
+    border-radius: 3px;
+}
+
+/* Previous / next chapter arrows */
+.nav-chapters {
+    font-size: 2.2rem;
+}
+
+
+/* Verse / song lines (e.g. the anthem in chapter 3): <div class="verse"> ... </div> */
+.content main .verse {
+    max-width: 100%;
+    margin: 3.2rem 0;
+    padding: 2.8rem 3.2rem;
+    background: var(--quote-bg);
+    border-inline-start: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+}
+.content main .verse p {
+    text-indent: 0;
+    margin: 0;
+    line-height: 2.5;
+}
+
+/* End-of-chapter ornament: a small flourish after the last paragraph
+   (not shown on the title page) */
+.content main:not(:has(.title-page))::after {
+    content: "";
+    display: block;
+    width: 15rem;
+    height: 1.4rem;
+    margin: 4.5rem auto 0;
+    background:
+        radial-gradient(circle, var(--accent) 0 0.3rem, transparent 0.36rem) center / 1.4rem 1.4rem no-repeat,
+        linear-gradient(to right, transparent, var(--accent)) left center / 5.6rem 1px no-repeat,
+        linear-gradient(to left, transparent, var(--accent)) right center / 5.6rem 1px no-repeat;
+    opacity: 0.85;
+}
+
+/* Text size buttons (added by book-extras.js) */
+.font-size-button {
+    font-family: var(--book-font);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 3.2rem;
+}
+.font-size-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* Reading progress bar: thin line across the very top of the window */
+#reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    z-index: 1000;
+    pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+    #reading-progress { transition: transform 0.12s linear; }
+}
+@media print {
+    #reading-progress, .font-size-button { display: none; }
+}
+
+
+/* ==========================================================================
+   7. TITLE PAGE  (README.md → <div class="title-page">)
+   Classic book title page: no box, just generous space between two double rules.
+   ========================================================================== */
+.content main .title-page {
+    text-align: center;
+    max-width: 460px;
+    margin: 3rem auto;
+    padding: 8rem 1rem 7rem;
+    border-block: 4px double var(--accent);
+}
+.content main .title-page p {
+    text-indent: 0;
+    text-align: center;
+}
+.content main .title-page h1 {
+    font-size: 4.6rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--accent);
+}
+.content main .title-page h1::after {
+    width: 10rem;
+    margin-top: 2.6rem;
+}
+.content main .title-page h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 2rem 0 0;
+    color: var(--fg);
+    opacity: 0.8;
+}
+.content main .title-page .author-name {
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 4rem 0 0;
+    color: var(--fg);
+}
+.content main .title-page hr {
+    margin: 4.5rem auto 0;
+}
+.content main .title-page .dedication {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: var(--fg);
+    opacity: 0.75;
+    margin-top: 2rem;
+}
+.content main .title-page .dedication:empty {
+    display: none;
+}
+
+
+/* ==========================================================================
+   8. RESPONSIVE & PRINT
+   ========================================================================== */
+@media only screen and (max-width: 899px) {
+    :root {
+        --book-font-size: 1.65rem;
+        --book-line-height: 1.85;
+    }
+    .content main {
+        padding-inline: 0.4rem;
+    }
+    .content main h1 {
+        font-size: calc(2.6rem * var(--book-scale, 1));
+        margin: 2rem 0 2.4rem;
+    }
+    .content main .title-page {
+        padding: 5rem 1rem 4.5rem;
+        margin: 2rem 1rem;
+    }
+    .content main .title-page h1 {
+        font-size: 3.6rem;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .menu-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media print {
+    .content main {
+        background: none;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+    .content main h1,
+    .content main h2,
+    .content main h3 {
+        color: #000;
+        break-after: avoid;
+    }
+    .content main p {
+        orphans: 3;
+        widows: 3;
+    }
+}
