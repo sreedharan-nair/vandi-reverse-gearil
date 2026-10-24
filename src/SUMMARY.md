@@ -1,6 +1,5 @@
 # ഉള്ളടക്കം
 
-* [ആമുഖം](./README.md)
 * [തിരനോട്ടം](./chapter1.md)
 * [രണ്ട്](./chapter2.md)
 * [മൂന്ന്](./chapter3.md)
@@ -15,7 +14,7 @@
 * [പന്ത്രണ്ട്](./chapter12.md)
 * [പതിമൂന്ന്](./chapter13.md)
 * [പതിനാല്](./chapter14.md)
-* [പതിനഞ്ച്‌](./chapter14.md)
+* [പതിനഞ്ച്‌](./chapter15.md)
 * [പതിനാറ്](./chapter16.md)
 * [പതിനേഴ്](./chapter17.md)
 * [പതിനെട്ട്](./chapter18.md)
