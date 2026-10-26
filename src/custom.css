@@ -181,7 +181,7 @@ html.rust {
 html.coal {
     --bg: #17130f;
     --paper: #231d18;
-    --fg: #d9cebc;
+    --fg: #c9bfad;
     --accent: #dba264;
     --links: #dba264;
     --rule: #3d332a;
@@ -204,7 +204,7 @@ html.coal {
 html.navy {
     --bg: #111827;
     --paper: #1a2336;
-    --fg: #d3dae8;
+    --fg: #bcc6da;
     --accent: #93b4e6;
     --links: #93b4e6;
     --rule: #2c3957;
@@ -227,7 +227,7 @@ html.navy {
 html.ayu {
     --bg: #131b18;
     --paper: #1b2621;
-    --fg: #d1dccf;
+    --fg: #bccab8;
     --accent: #a8c98a;
     --links: #a8c98a;
     --rule: #2f4038;
