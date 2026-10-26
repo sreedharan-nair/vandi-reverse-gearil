@@ -6,22 +6,20 @@
 
 <div class="about-author">
 
-### വിലാസം
-വി. എൻ. ശ്രീധരൻ നായർ ശ്രീവിഹാർ,\
-കോതകുളങ്ങര അങ്കമാലി 683 572 \
-എറണാകുളം ജില്ല.
+Educated at
+- St. Joseph's High School, Angamaly,
+- U C College, Aluva,
+- Govt. Engineering College, Thrissur,
+- School of Management Studies, Cochin University of Science and Technology and
+- Annamalai University.
 
-### വിദ്യാഭ്യാസം
-- സെൻ്റ് ജോസഫ്‌സ്‌ ഹൈസ്‌കൂൾ അങ്കമാലി
-- യൂണിയൻ ക്രിസ്റ്റ്യൻ കോളേജ് ആലുവ 
-- ഗവ. എഞ്ചിനീയറിംഗ് കോളേജ് തൃശൂർ 
-- സ്‌കൂൾ ഓഫ് മാനേജ്മെന്റ് സ്റ്റഡീസ് (കൊച്ചിൻ യൂണിവേഴ്‌സിറ്റി ഓഫ് സയൻസ് & ടെക്നോളജി) 
-- അണ്ണാമലൈ യൂണിവേഴ്‌സിറ്റി എന്നിവിടങ്ങളിൽ
+After 34 years of service, retired as Head of the Department of Human Resource Management of HMT Ltd., Kalamassery.
 
-ഇൻസ്റ്റിറ്റ്യൂഷൻ ഓഫ് എഞ്ചിനീയേഴ്‌സ് \
-നാഷനൽ ഇൻസ്റ്റിറ്റ്യൂട്ട് ഓഫ് പേഴ്‌സണൽ മാനേജ്‌മെന്റ് \
-എന്നിവയിൽ ആജീവനാംഗത്വം
+Life Member of the Institution of Engineers (India) Fellow of the National Institute of Personnel Management.
 
-കളമശ്ശേരി എച്ച്.എം.ടി.യിൽ\
-ഹ്യൂമൻ റിസോഴ്‌സ് മാനേജ്‌മെൻ്റ് വകുപ്പ് മേധാവി ആയിരുന്നു.
+### പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ
+- അനുഭവം ഗുരു  
+- മൗനം ഭവതി വാചാലം
+- ദാനം കിട്ടിയ ജന്മങ്ങൾ
+
 </div>

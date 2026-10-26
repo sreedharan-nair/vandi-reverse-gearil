@@ -545,14 +545,12 @@ body,
     #reading-progress, .font-size-button { display: none; }
 }
 
-/* Author photo: small square, floated to the right of the text */
+/* Author photo: small portrait, floated to the right of the text */
 .content main img.author-photo {
     float: right;
-    width: 25%;
-    height: 25%;
-    object-fit: cover;          /* crops to a square instead of squashing */
-    object-position: center top;/* keeps faces from being cut off */
-    margin: 0.3rem 8rem 1rem 1.6rem;
+    width: clamp(110px, 25%, 190px);   /* never huge, never tiny */
+    height: auto;                      /* keep the photo's own proportions */
+    margin: 0.3rem 3rem 1rem 1.6rem;
     border-radius: 4px;
     border: 3px solid var(--paper);
     outline: 1px solid var(--rule);
@@ -560,16 +558,37 @@ body,
 }
 
 @media (max-width: 600px) {
-    .content main img.author-photo {
-        width: 25%;
-        height: 25%;
-        margin-left: 1rem;
-    }
+    .content main img.author-photo { margin-right: 0; margin-left: 1rem; }
 }
 
+/* About-the-author text and lists */
 .content main .about-author p + p {
-    font-weight: 400;
-    text-indent: 0rem;
+    text-indent: 0;
+}
+.content main .about-author ul {
+    list-style: none;                  /* we draw our own marker */
+    padding-inline-start: 1.4rem;
+    margin: 0.1rem 0 1rem;
+}
+.content main .about-author p:has(+ ul) {
+    margin-bottom: 0;                  /* tuck the list under its lead-in line */
+}
+.content main .about-author h3 + ul {
+    margin-top: 0.2rem;
+}
+.content main .about-author li {
+    position: relative;
+    margin: 0.15rem 0;
+    padding-inline-start: 2.1rem;
+}
+.content main .about-author li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0.1rem;
+    top: 0.98em;
+    width: 0.5em;
+    height: 1px;
+    background: var(--accent);         /* a short plain line instead of a dot */
 }
 
 /* ==========================================================================
