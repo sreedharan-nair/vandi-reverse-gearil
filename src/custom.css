@@ -545,6 +545,32 @@ body,
     #reading-progress, .font-size-button { display: none; }
 }
 
+/* Author photo: small square, floated to the right of the text */
+.content main img.author-photo {
+    float: right;
+    width: 25%;
+    height: 25%;
+    object-fit: cover;          /* crops to a square instead of squashing */
+    object-position: center top;/* keeps faces from being cut off */
+    margin: 0.3rem 8rem 1rem 1.6rem;
+    border-radius: 4px;
+    border: 3px solid var(--paper);
+    outline: 1px solid var(--rule);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 600px) {
+    .content main img.author-photo {
+        width: 25%;
+        height: 25%;
+        margin-left: 1rem;
+    }
+}
+
+.content main .about-author p + p {
+    font-weight: 400;
+    text-indent: 0rem;
+}
 
 /* ==========================================================================
    7. TITLE PAGE  (README.md → <div class="title-page">)
