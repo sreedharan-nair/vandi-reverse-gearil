@@ -1,4 +1,4 @@
-# ഗ്രന്ഥകർത്താവിനെക്കുറിച്ച്
+# ഗ്രന്ഥകർത്താവിനെ കുറിച്ച്
 
 ## വി എൻ ശ്രീധരൻ നായർ
 
@@ -15,7 +15,9 @@ Educated at
 
 After 34 years of service, retired as Head of the Department of Human Resource Management of HMT Ltd., Kalamassery.
 
-Life Member of the Institution of Engineers (India) Fellow of the National Institute of Personnel Management.
+Life Member of the Institution of Engineers (India) & Chartered Engineer. 
+
+Fellow of the National Institute of Personnel Management.
 
 ### പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ
 - അനുഭവം ഗുരു  
