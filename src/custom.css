@@ -721,3 +721,14 @@ body,
         widows: 3;
     }
 }
+
+/* Cover illustration (rear-view mirror and gear stick, drawn inline in README.md).
+   It takes the accent colour, so it follows every theme. */
+.content main .title-page .cover-art { margin: 2.4rem 0 2rem; }
+.content main .title-page .cover-art svg {
+    display: block;
+    width: min(460px, 100%);
+    height: auto;
+    margin: 0 auto;
+    color: var(--accent);
+}
