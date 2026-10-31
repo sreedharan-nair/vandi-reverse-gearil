@@ -1,3 +1,7 @@
+/* Cover choice: "A" (margin line), "B" (tally marks) or "none" (typed title only) */
+const COVER = "A";
+document.documentElement.dataset.cover = COVER;
+
 /* Text-size buttons + reading progress bar for the book.
    Loaded through book.toml -> additional-js. */
 (function () {

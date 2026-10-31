@@ -1,5 +1,4 @@
 /* ==========================================================================
-   വണ്ടി റിവേഴ്‌സ് ഗിയറിൽ — book styling for mdBook 0.5
    --------------------------------------------------------------------------
    1. Fonts          4. Chapter headings & ornaments   7. Title page
    2. Colour themes  5. Reading page (text, margins)   8. Responsive / print
@@ -562,6 +561,14 @@ body,
 }
 
 /* About-the-author text and lists */
+.content main h2 {
+    font-size: 2.5rem;
+    line-height: 1.9;
+    margin: 2rem 0 0;
+    color: var(--sidebar-active);
+    opacity: 0.75;
+}
+
 .content main .about-author p + p {
     text-indent: 0;
 }
@@ -573,6 +580,14 @@ body,
 .content main .about-author p:has(+ ul) {
     margin-bottom: 0;                  /* tuck the list under its lead-in line */
 }
+
+.content main .about-author h3 {
+    line-height: 1.9;
+    margin: 2rem 0 0;
+    color: var(--sidebar-active);
+    opacity: 0.75;
+}
+
 .content main .about-author h3 + ul {
     margin-top: 0.2rem;
 }
@@ -619,11 +634,11 @@ body,
     margin-top: 2.6rem;
 }
 .content main .title-page h2 {
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 1.9;
     margin: 2rem 0 0;
-    color: var(--fg);
-    opacity: 0.8;
+    color: var(--sidebar-active);
+    opacity: 0.75;
 }
 .content main .title-page .author-name {
     font-size: 2.2rem;
@@ -635,17 +650,11 @@ body,
 .content main .title-page hr {
     margin: 4.5rem auto 0;
 }
-.content main .title-page .dedication {
-    font-size: 1.5rem;
-    line-height: 1.9;
-    color: var(--fg);
-    opacity: 0.75;
-    margin-top: 2rem;
-}
-.content main .title-page .dedication:empty {
+
+/* Hide the "on this page" heading list under the current chapter in the sidebar */
+.on-this-page {
     display: none;
 }
-
 
 /* ==========================================================================
    8. RESPONSIVE & PRINT
@@ -732,3 +741,19 @@ body,
     margin: 0 auto;
     color: var(--accent);
 }
+
+/* Cover: which one shows is set by COVER in book-extras.js ("A", "B" or "none") */
+.content main .title-page .cover-art{margin:0 0 2rem;text-align:center}
+.content main .title-page .cover-art img{display:none;width:min(420px,100%);height:auto;margin:0 auto;border-radius:3px;box-shadow:0 3px 14px rgba(0,0,0,.28)}
+:root:not([data-cover]) .cover-art img[data-cover="A"],
+:root[data-cover="A"] .cover-art img[data-cover="A"],
+:root[data-cover="B"] .cover-art img[data-cover="B"]{display:block}
+/* With a cover showing, the typed title block stays in the page for the sidebar and search but is hidden visually */
+:root:not([data-cover="none"]) .content main .title-page > :is(h1,h2,hr,.author-name){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0;border:0}
+/* With a cover showing, drop the title-page double rules and spacing */
+:root:not([data-cover="none"]) .content main .title-page{border-block:0;padding:0;margin:1.5rem auto;max-width:460px}
+/* With a cover showing, the cover IS the page: no paper card around it */
+:root:not([data-cover="none"]) .content main:has(.title-page){background:none;border:0;box-shadow:none;padding:0;margin-block:1.6rem 3rem}
+:root:not([data-cover="none"]) .content main .title-page{max-width:none;margin:0 auto}
+:root:not([data-cover="none"]) .content main .title-page .cover-art{margin:0}
+:root:not([data-cover="none"]) .content main .title-page .cover-art img{width:min(520px,100%);box-shadow:0 2px 4px var(--shadow),0 14px 40px var(--shadow)}
